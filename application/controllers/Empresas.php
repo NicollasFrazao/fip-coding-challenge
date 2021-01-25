@@ -8,10 +8,9 @@ class Empresas extends CI_Controller
   {
     $this -> load -> model('model_empresas');
 
+    $data['titulo'] = 'Empresas';
     $data['empresas'] = $this -> model_empresas -> get_all();
     
-    $data['titulo'] = 'Empresas';
-
 		$this -> load -> view('header/index', $data);
     $this -> load -> view('empresas/index', $data);
 		$this -> load -> view('footer/index');
