@@ -1,16 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Usuarios extends CI_Controller {
-
-
-	public function index()	{
+class Usuarios extends CI_Controller 
+{
+  public function index()	
+  {
     //TODO: carregar o model usuarios
     //TODO: chamar a funcao do model que lista os usuarios e retornar para uma variavel
     //TODO: passa a variavel para a view
     //TODO: na view fazer o tratamento dos dados
     //TODO: criar uma tabela simples, colocar um link para entrar no perfil do usuario via /profile
-		$this->load->view('usuarios/index');
+
+    $data['titulo'] = 'Usuários';
+
+		$this -> load -> view('header/index', $data);
+		$this -> load -> view('usuarios/index');
+		$this -> load -> view('footer/index');
   }
 
   public function profile($id) {
